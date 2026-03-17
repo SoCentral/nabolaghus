@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Økonomi og finansiering — Verktøykasse — Arena for nabolagshus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --sand-50:#faf9f6;--sand-100:#f3f1ec;--sand-200:#e8e4db;--sand-300:#d4cfc3;--sand-400:#a9a393;--sand-500:#7a756a;
+  --forest-50:#eef5f0;--forest-100:#d4e8d9;--forest-200:#a3cead;--forest-300:#5fa872;--forest-400:#3d7a4f;--forest-500:#1d4a2a;--forest-600:#0f3318;
+  --ocean-50:#edf3f9;--ocean-100:#d2e3f2;--ocean-200:#9ec4e1;--ocean-300:#5a9bc5;--ocean-400:#2d6f9e;--ocean-500:#1a4d72;
+  --amber-50:#fdf6ea;--amber-100:#f8e6c2;--amber-200:#efc576;--amber-300:#d9a23e;--amber-400:#a87820;--amber-500:#7a5615;
+  --coral-50:#fdf0ec;--coral-100:#f8d5ca;--coral-200:#ed9e86;--coral-300:#d46a47;--coral-400:#a3462a;--coral-500:#72301d;
+  --text-primary:#2c2a25;--text-secondary:#6b6760;--text-muted:#9e998f;
+  --bg:#faf9f6;--bg-card:#ffffff;--border:#e8e4db;--border-light:#f0ede6;
+  --radius:10px;--radius-lg:14px;--radius-xl:20px;
+  --font-display:'Fraunces', Georgia, serif;--font-body:'DM Sans', system-ui, sans-serif;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text-primary);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.6}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light);padding:0 2rem}
+.nav-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:var(--font-display);font-weight:500;font-size:1.05rem;color:var(--forest-500);text-decoration:none;letter-spacing:-.01em}
+.nav-links{display:flex;gap:1.75rem;align-items:center}
+.nav-links a{font-size:.835rem;color:var(--text-secondary);text-decoration:none;font-weight:400;transition:color .15s}
+.nav-links a:hover{color:var(--text-primary)}
+.nav-links a.active{color:var(--forest-400);font-weight:500}
+
+/* BREADCRUMB */
+.breadcrumb{max-width:1080px;margin:0 auto;padding:1.25rem 2rem .5rem;font-size:.8rem;color:var(--text-muted)}
+.breadcrumb a{color:var(--ocean-400);text-decoration:none;transition:color .15s}
+.breadcrumb a:hover{color:var(--ocean-500)}
+.breadcrumb span{margin:0 .4rem;color:var(--sand-300)}
+
+/* HERO */
+.page-hero{max-width:1080px;margin:0 auto;padding:1rem 2rem 3rem;display:flex;gap:2.5rem;align-items:flex-start}
+.page-hero-text{flex:1}
+.phase-badge{font-size:.7rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--ocean-400);background:var(--ocean-50);padding:.3rem .75rem;border-radius:var(--radius);display:inline-block;margin-bottom:1rem}
+.page-hero h1{font-family:var(--font-display);font-size:clamp(1.75rem,3.5vw,2.3rem);font-weight:400;line-height:1.2;letter-spacing:-.02em;margin-bottom:1rem}
+.page-hero .intro{font-size:1rem;color:var(--text-secondary);line-height:1.7;max-width:520px}
+.hero-visual{width:260px;height:180px;border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--ocean-50),var(--forest-50));display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;overflow:hidden}
+.hero-visual::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0v60M0 30h60' stroke='%232d6f9e' stroke-width='.3' opacity='.15'/%3E%3C/svg%3E");opacity:.6}
+.hero-visual svg{position:relative;z-index:1}
+
+/* MAIN CONTENT */
+.content{max-width:1080px;margin:0 auto;padding:0 2rem}
+
+/* STEPS */
+.steps-section{margin-bottom:3rem}
+.section-label{font-family:var(--font-display);font-size:1.25rem;font-weight:400;margin-bottom:1.5rem;letter-spacing:-.01em}
+.step{display:flex;gap:1rem;margin-bottom:0;position:relative}
+.step-line{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:36px}
+.step-dot{width:36px;height:36px;border-radius:50%;background:var(--ocean-50);border:1.5px solid var(--ocean-200);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;color:var(--ocean-400);flex-shrink:0;position:relative;z-index:2}
+.step-connector{width:1.5px;flex:1;background:var(--ocean-100);min-height:20px}
+.step:last-child .step-connector{display:none}
+.step-body{padding-bottom:1.75rem;flex:1}
+.step-body h3{font-family:var(--font-display);font-size:1.02rem;font-weight:400;margin-bottom:.35rem;letter-spacing:-.01em}
+.step-body p{font-size:.885rem;color:var(--text-secondary);line-height:1.6}
+.tool-link{display:inline-flex;align-items:center;gap:5px;font-size:.8rem;font-weight:500;color:var(--ocean-400);text-decoration:none;margin-top:.5rem;padding:.35rem .7rem;background:var(--ocean-50);border-radius:var(--radius);transition:background .15s}
+.tool-link:hover{background:var(--ocean-100)}
+.tool-link svg{width:14px;height:14px}
+
+/* EXAMPLES */
+.examples-section{margin-bottom:3rem;background:var(--sand-100);border-radius:var(--radius-xl);padding:2rem}
+.examples-section .section-label{margin-bottom:.35rem}
+.examples-subtitle{font-size:.875rem;color:var(--text-secondary);margin-bottom:1.25rem}
+.example-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;margin-bottom:12px;transition:border-color .15s}
+.example-card:last-child{margin-bottom:0}
+.example-card:hover{border-color:var(--sand-300)}
+.example-card h3{font-family:var(--font-display);font-size:.975rem;font-weight:400;margin-bottom:.4rem}
+.example-card p{font-size:.855rem;color:var(--text-secondary);line-height:1.6}
+.example-tag{display:inline-block;font-size:.75rem;font-weight:500;color:var(--amber-400);background:var(--amber-50);padding:.25rem .65rem;border-radius:var(--radius);margin-top:.6rem;text-decoration:none;transition:background .15s}
+.example-tag:hover{background:var(--amber-100)}
+
+/* VIDEO */
+.video-section{margin-bottom:3rem;display:flex;gap:1.25rem;align-items:center;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;transition:border-color .15s}
+.video-section:hover{border-color:var(--sand-300)}
+.video-thumb{width:110px;height:70px;border-radius:var(--radius);background:var(--sand-100);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text-muted);font-size:1.5rem;position:relative;overflow:hidden}
+.video-thumb::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--coral-50),var(--amber-50))}
+.video-thumb svg{position:relative;z-index:1}
+.video-text h3{font-family:var(--font-display);font-size:.95rem;font-weight:400;margin-bottom:.25rem}
+.video-text p{font-size:.825rem;color:var(--text-secondary);line-height:1.5}
+
+/* RESOURCES */
+.resources-section{margin-bottom:3rem}
+.res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.res-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1rem 1.15rem;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+.res-card:hover{border-color:var(--sand-300);transform:translateY(-2px)}
+.res-type{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:.35rem}
+.res-type.mal{color:var(--ocean-400)}
+.res-type.eksempel{color:var(--amber-400)}
+.res-type.lenke{color:var(--forest-400)}
+.res-title{font-size:.875rem;font-weight:500;color:var(--text-primary);margin-bottom:.2rem}
+.res-desc{font-size:.78rem;color:var(--text-secondary);line-height:1.45}
+
+/* CTA */
+.cta-bottom{margin-bottom:2.5rem;background:var(--forest-50);border:1px solid var(--forest-100);border-radius:var(--radius-lg);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.cta-bottom p{font-size:.9rem;color:var(--forest-500)}
+.cta-bottom a{font-size:.85rem;font-weight:500;color:var(--bg-card);background:var(--forest-400);padding:.5rem 1.15rem;border-radius:var(--radius);text-decoration:none;transition:background .15s}
+.cta-bottom a:hover{background:var(--forest-500)}
+
+/* PREV/NEXT NAV */
+.page-nav{display:flex;justify-content:space-between;padding-bottom:2.5rem;gap:1rem}
+.page-nav a{font-size:.835rem;color:var(--ocean-400);text-decoration:none;transition:color .15s;display:flex;align-items:center;gap:.3rem}
+.page-nav a:hover{color:var(--ocean-500)}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer p{font-size:.8rem;color:var(--text-muted)}
+.footer a{color:var(--text-secondary);text-decoration:none}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.page-hero,.steps-section,.examples-section,.video-section,.resources-section,.cta-bottom{animation:fadeUp .5s ease both}
+.steps-section{animation-delay:.05s}
+.examples-section{animation-delay:.1s}
+.video-section{animation-delay:.15s}
+.resources-section{animation-delay:.2s}
+.cta-bottom{animation-delay:.25s}
+.step{animation:fadeUp .35s ease both}
+.step:nth-child(1){animation-delay:.1s}
+.step:nth-child(2){animation-delay:.15s}
+.step:nth-child(3){animation-delay:.2s}
+.step:nth-child(4){animation-delay:.25s}
+.step:nth-child(5){animation-delay:.3s}
+
+@media(max-width:720px){
+  .nav{padding:0 1rem}
+  .nav-links{gap:1rem}
+  .breadcrumb,.content{padding-left:1.25rem;padding-right:1.25rem}
+  .page-hero{padding:1rem 1.25rem 2.5rem;flex-direction:column}
+  .hero-visual{width:100%;height:120px}
+  .res-grid{grid-template-columns:1fr 1fr}
+  .video-section{flex-direction:column;align-items:flex-start}
+  .video-thumb{width:100%;height:100px}
+}
+@media(max-width:480px){
+  .res-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Arena for nabolagshus</a>
+    <div class="nav-links">
+      <a href="#">Hjem</a>
+      <a href="#">Inspirasjon</a>
+      <a href="index.html" class="active">Verktøykasse</a>
+      <a href="#">Samlinger</a>
+      <a href="#">Rådgivning</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Verktøykasse</a>
+  <span>&rsaquo;</span>
+  Fase 2: Bygge og finansiere
+  <span>&rsaquo;</span>
+  Økonomi og finansiering
+</div>
+
+<header class="page-hero">
+  <div class="page-hero-text">
+    <span class="phase-badge">Fase 2 &middot; Bygge og finansiere</span>
+    <h1>Økonomi og finansiering</h1>
+    <p class="intro">Å få økonomien til å gå rundt er ofte den største utfordringen. Her finner du en trinnvis oversikt over vanlige kostnader, ulike måter å finansiere drift på — og hvordan du kan bygge en modell med flere bein å stå på.</p>
+  </div>
+  <div class="hero-visual">
+    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#2d6f9e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity=".5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- STEG FOR STEG -->
+  <section class="steps-section">
+    <h2 class="section-label">Steg for steg</h2>
+
+    <div class="step">
+      <div class="step-line">
+        <div class="step-dot">1</div>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step-body">
+        <h3>Få oversikt over kostnadene</h3>
+        <p>Kartlegg faste og variable utgifter: husleie og felleskostnader, vedlikeholdskostnader (særlig i eldre bygg), lønn til ansatte, og kostnader til aktiviteter og programinnhold.</p>
+        <a href="https://docs.google.com/document/d/196W8jvP4Lm0myIqnL9Eluh7EGvZ5IgnQ7GumlcoHFrk/edit" class="tool-link" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+          Arbeidsdokument kostnader
+        </a>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-line">
+        <div class="step-dot">2</div>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step-body">
+        <h3>Skap inntekter</h3>
+        <p>Kombiner ulike inntektsstrømmer for å gjøre økonomien mer robust: leieinntekter med differensierte priser, billettsalg, kafé/servering, og salg av tjenester som kurs og fasilitering.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-line">
+        <div class="step-dot">3</div>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step-body">
+        <h3>Utforsk annen finansiering</h3>
+        <p>Beboerbidrag (f.eks. 1 kr per dag per leilighet fra borettslag), partnerbidrag fra offentlige og private aktører, sponsing fra næringslivet, og folkefinansiering.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-line">
+        <div class="step-dot">4</div>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step-body">
+        <h3>Reduser kostnadene</h3>
+        <p>Gratis eller redusert husleie gjennom avtaler, stillinger delt med partnere, frivillig bemanning, selvorganisering og ungdomsjobber som del av driftsmodellen.</p>
+        <a href="https://docs.google.com/document/d/1xRs1QfN7Pv39IXk6hXxiGFKn3tQePA277X1NRDqcUtI/edit" class="tool-link" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+          Arbeidsdokument inntekter og tilskudd
+        </a>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-line">
+        <div class="step-dot">5</div>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step-body">
+        <h3>Søk støtte og tilskudd</h3>
+        <p>Alle nabolagshusene som er kartlagt har mottatt tilskudd. Bruk tilskudd.no for statlige ordninger, stipendportalen.no, lokale sparebankstiftelser, og sjekk kommunale/fylkeskommunale tilskudd.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EKSEMPLER -->
+  <section class="examples-section">
+    <h2 class="section-label">Eksempler fra ekte hus</h2>
+    <p class="examples-subtitle">Se hvordan andre har løst økonomien i praksis</p>
+
+    <div class="example-card">
+      <h3>Biermannsgården, Oslo</h3>
+      <p>Gjennomgikk regnskap og bilag fra to år, forenklet leieforhold ved å slå sammen aktører, utviklet differensierte priser for formålsnære aktører, og fant tilskuddsordninger for rehabilitering som samtidig reduserte vedlikeholdskostnader.</p>
+      <a href="https://docs.google.com/spreadsheets/d/1Lgh783uLo6PBq3KsHJ5WI-oM5IXFWJcLDxEQTDlt-4A/edit" class="example-tag" target="_blank">Se budsjett 2025 &rarr;</a>
+    </div>
+
+    <div class="example-card">
+      <h3>Lånke Ungdomslag</h3>
+      <p>Grendehus med fokus på kostnadseffektiv drift gjennom frivillighet og lokalt engasjement, med kreative løsninger for å holde kostnadene nede.</p>
+      <a href="https://www.youtube.com/watch?v=-i8fD9dOPSs" class="example-tag" target="_blank">Se opptak fra samling &rarr;</a>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <a href="https://www.youtube.com/watch?v=-i8fD9dOPSs" class="video-section" target="_blank" style="text-decoration:none;color:inherit;">
+    <div class="video-thumb">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="#d46a47" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+    </div>
+    <div class="video-text">
+      <h3>Opptak: To nabolagshus om økonomi</h3>
+      <p>Thomas Evensen (Biermannsgården) og Erlend Eidem Engan (Lånke Ungdomslag) deler erfaringer fra kunnskapsarenaens andre samling.</p>
+    </div>
+  </a>
+
+  <!-- MALER OG RESSURSER -->
+  <section class="resources-section">
+    <h2 class="section-label">Maler og ressurser</h2>
+    <div class="res-grid">
+      <a href="https://docs.google.com/document/d/196W8jvP4Lm0myIqnL9Eluh7EGvZ5IgnQ7GumlcoHFrk/edit" class="res-card" target="_blank">
+        <div class="res-type mal">Mal</div>
+        <div class="res-title">Kostnadsoversikt</div>
+        <div class="res-desc">Arbeidsdokument for å kartlegge utgifter og muligheter for reduksjon</div>
+      </a>
+      <a href="https://docs.google.com/document/d/1xRs1QfN7Pv39IXk6hXxiGFKn3tQePA277X1NRDqcUtI/edit" class="res-card" target="_blank">
+        <div class="res-type mal">Mal</div>
+        <div class="res-title">Inntekter og tilskudd</div>
+        <div class="res-desc">Kartlegg alle inntektskilder og finansieringsmuligheter</div>
+      </a>
+      <a href="https://drive.google.com/drive/u/1/folders/16X64GtQ3sKNESpMMg4NK4Xe4xiWdrTH9" class="res-card" target="_blank">
+        <div class="res-type mal">Mal</div>
+        <div class="res-title">Workshop økonomi</div>
+        <div class="res-desc">Utskriftsvennlig mal for økonomisk workshop</div>
+      </a>
+      <a href="https://docs.google.com/spreadsheets/d/1Lgh783uLo6PBq3KsHJ5WI-oM5IXFWJcLDxEQTDlt-4A/edit" class="res-card" target="_blank">
+        <div class="res-type eksempel">Eksempel</div>
+        <div class="res-title">Budsjett 2025</div>
+        <div class="res-desc">Biermannsgården sitt årsbudsjett</div>
+      </a>
+      <a href="https://www.tilskudd.no" class="res-card" target="_blank">
+        <div class="res-type lenke">Lenke</div>
+        <div class="res-title">tilskudd.no</div>
+        <div class="res-desc">Statlige tilskuddsordninger</div>
+      </a>
+      <a href="https://fundraisingnorge.no/wiki/sokeordninger-innen-finansiering/" class="res-card" target="_blank">
+        <div class="res-type lenke">Lenke</div>
+        <div class="res-title">Fundraising Norge</div>
+        <div class="res-desc">Private og offentlige ordninger</div>
+      </a>
+      <a href="https://prosperastiftelsen.no" class="res-card" target="_blank">
+        <div class="res-type lenke">Lenke</div>
+        <div class="res-title">Prospera</div>
+        <div class="res-desc">Ordninger sortert på formål</div>
+      </a>
+      <a href="https://stipendportalen.no" class="res-card" target="_blank">
+        <div class="res-type lenke">Lenke</div>
+        <div class="res-title">Stipendportalen</div>
+        <div class="res-desc">Oversikt over støtteordninger</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- KUNNSKAPSBANK -->
+  <div style="text-align:center;margin-bottom:2.5rem">
+    <a href="https://drive.google.com/drive/folders/1Lgwq6olN-NRkIWi7MoF7rnewfltcwcI9" target="_blank" style="font-size:.85rem;color:var(--ocean-400);text-decoration:none;font-weight:500">Se kunnskapsbanken for mer dybde &rarr;</a>
+    <span style="display:block;font-size:.78rem;color:var(--text-muted);margin-top:.3rem">Savner du noe? <a href="mailto:guro@socentral.no?subject=Ønsker for verktøykassen" style="color:var(--ocean-400);text-decoration:none">Gi oss beskjed!</a></span>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-bottom">
+    <p>Trenger du mer hjelp med økonomi og finansiering?</p>
+    <a href="https://www.nabolaghus.no/sparring">Book 1:1 rådgivning &rarr;</a>
+  </div>
+
+  <!-- PREV/NEXT -->
+  <nav class="page-nav">
+    <a href="#">&larr; Organisasjonsform</a>
+    <a href="#">Partnerskap og samarbeid &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="footer">
+  <p>Arena for nabolagshus &middot; Øvre Slottsgate 3, 0157 Oslo &middot; <a href="mailto:hei@nabolagshus.no">hei@nabolagshus.no</a></p>
+</footer>
+
+</body>
+</html>
