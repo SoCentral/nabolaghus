@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verktøykasse — Arena for nabolagshus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.hero{max-width:1080px;margin:0 auto;padding:4rem 2rem 3rem;text-align:center}
+.hero-eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--forest-400);font-weight:500;margin-bottom:.75rem}
+.hero h1{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,2.8rem);font-weight:400;line-height:1.2;letter-spacing:-.02em;color:var(--text-primary);margin-bottom:1rem}
+.hero h1 em{font-style:italic;color:var(--forest-400)}
+.hero p{font-size:1.05rem;color:var(--text-secondary);max-width:540px;margin:0 auto;line-height:1.65}
+.phases{max-width:1080px;margin:0 auto;padding:0 2rem 4rem}
+.phase{margin-bottom:3.5rem}
+.phase-header{display:flex;align-items:baseline;gap:12px;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+.phase-num{font-family:var(--font-display);font-size:.8rem;font-weight:500;letter-spacing:.02em}
+.phase-num.p1{color:var(--forest-400)}.phase-num.p2{color:var(--ocean-400)}.phase-num.p3{color:var(--amber-400)}
+.phase-title{font-family:var(--font-display);font-size:1.15rem;font-weight:400;color:var(--text-primary)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0;opacity:0;transition:opacity .2s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.06);border-color:var(--sand-300)}
+.card:hover::before{opacity:1}
+.phase.p1 .card::before{background:var(--forest-300)}.phase.p2 .card::before{background:var(--ocean-300)}.phase.p3 .card::before{background:var(--amber-300)}
+.card-icon{width:40px;height:40px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.phase.p1 .card-icon{background:var(--forest-50);color:var(--forest-400)}.phase.p2 .card-icon{background:var(--ocean-50);color:var(--ocean-400)}.phase.p3 .card-icon{background:var(--amber-50);color:var(--amber-400)}
+.card h3{font-family:var(--font-display);font-size:1.05rem;font-weight:400;line-height:1.3;margin-bottom:.4rem;letter-spacing:-.01em}
+.card p{font-size:.855rem;color:var(--text-secondary);line-height:1.55;flex:1}
+.card-arrow{font-size:.8rem;color:var(--text-muted);margin-top:.75rem;transition:color .15s,transform .15s;display:inline-block}
+.card:hover .card-arrow{color:var(--text-primary);transform:translateX(3px)}
+.cta-bar{max-width:1080px;margin:0 auto 3rem;padding:0 2rem}
+.cta-inner{background:var(--forest-50);border:1px solid var(--forest-100);border-radius:var(--radius-lg);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.cta-inner p{font-size:.925rem;color:var(--forest-500)}
+.cta-inner a{font-size:.875rem;font-weight:500;color:var(--bg-card);background:var(--forest-400);padding:.55rem 1.25rem;border-radius:var(--radius);text-decoration:none;transition:background .15s}
+.cta-inner a:hover{background:var(--forest-500)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero,.phase,.cta-bar{animation:fadeUp .5s ease both}
+.phase:nth-child(2){animation-delay:.1s}.phase:nth-child(3){animation-delay:.2s}.cta-bar{animation-delay:.3s}
+.card{animation:fadeUp .4s ease both}
+.phase:nth-child(1) .card:nth-child(1){animation-delay:.15s}.phase:nth-child(1) .card:nth-child(2){animation-delay:.2s}
+.phase:nth-child(2) .card:nth-child(1){animation-delay:.25s}.phase:nth-child(2) .card:nth-child(2){animation-delay:.3s}.phase:nth-child(2) .card:nth-child(3){animation-delay:.35s}
+.phase:nth-child(3) .card:nth-child(1){animation-delay:.4s}.phase:nth-child(3) .card:nth-child(2){animation-delay:.45s}.phase:nth-child(3) .card:nth-child(3){animation-delay:.5s}.phase:nth-child(3) .card:nth-child(4){animation-delay:.55s}
+@media(max-width:640px){.hero{padding:2.5rem 1.25rem 2rem}.phases{padding:0 1.25rem 3rem}.cta-bar{padding:0 1.25rem}.card-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+<a href="index.html" class="nav-logo">Arena for nabolagshus</a>
+<div class="nav-links">
+<a href="index.html">Hjem</a>
+<a href="verktoykasse.html" class="active">Verktøykasse</a>
+<a href="samlinger.html">Samlinger</a>
+<a href="radgivning.html">Rådgivning</a>
+<a href="inspirasjon.html">Inspirasjon</a>
+</div></div></nav>
+
+<header class="hero">
+  <div class="hero-eyebrow">Verktøykasse</div>
+  <h1>Alt du trenger for å drive et <em>nabolagshus</em></h1>
+  <p>Praktiske verktøy, maler og eksempler fra ekte hus — organisert etter hvor du er i prosessen. Velg tema eller bla gjennom fasene.</p>
+</header>
+
+<section class="phases">
+
+  <div class="phase p1">
+    <div class="phase-header"><span class="phase-num p1">Fase 1</span><span class="phase-title">Starte opp</span></div>
+    <div class="card-grid">
+      <a href="kartlegging.html" class="card">
+        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Kartlegging og planlegging</h3>
+        <p>Finn ut hva nabolaget trenger, kartlegg behov og test ideene dine før du setter i gang.</p>
+        <span class="card-arrow">&rarr;</span>
+      </a>
+      <a href="organisasjonsform.html" class="card">
+        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/></svg></div>
+        <h3>Organisasjonsform</h3>
+        <p>Velg riktig juridisk struktur — stiftelse, forening, samvirke eller AS — og avklar roller og avtaler.</p>
+        <span class="card-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="phase p2">
+    <div class="phase-header"><span class="phase-num p2">Fase 2</span><span class="phase-title">Bygge og finansiere</span></div>
+    <div class="card-grid">
+      <a href="okonomi.html" class="card">
+        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h3>Økonomi og finansiering</h3>
+        <p>Kostnader, inntektsstrømmer, tilskudd og bærekraftige økonomiske modeller.</p>
+        <span class="card-arrow">&rarr;</span>
+      </a>
+      <a href="partnerskap.html" class="card">
+        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Partnerskap og samarbeid</h3>
+        <p>Bygg partnerskap med kommune, næringsliv og lokale aktører.</p>
+        <span class="card-arrow">&rarr;</span>
+      </a>
+      <a href="byggteknisk.html" class="card">
+        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M5 20V10l7-6 7 6v10M9 20v-6h6v6"/></svg></div>
+        <h3>Byggteknisk</h3>
+        <p>Istandsetting, vedlikehold, brannsikring og universell utforming av bygget.</p>
+        <span class="card-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="phase p3">
+    <div class="phase-header"><span class="phase-num p3">Fase 3</span><span class="phase-title">Drifte og utvikle</span></div>
+    <div class="card-grid">
+      <a href="drift.html" class="card">
+        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+        <h3>Daglig drift</h3>
+        <p>Rutiner, systemer, booking, lås, fakturering og intern kommunikasjon.</p>
+        <span class="card-arrow">&rarr;</span>
+      </a>
+      <a href="frivillighet.html" class="card">
+        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <h3>Frivillighet</h3>
+        <p>Rekruttering, engasjement, organisering og eierskap blant frivillige.</p>
+        <span class="card-arrow">&rarr;</span>
+      </a>
+      <a href="kommunikasjon.html" class="card">
+        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h3>Kommunikasjon</h3>
+        <p>Målgrupper, kanaler, budskap og innhold for å nå ut lokalt.</p>
+        <span class="card-arrow">&rarr;</span>
+      </a>
+      <a href="maloppnaaelse.html" class="card">
+        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h3>Måloppnåelse</h3>
+        <p>Formål, effektmåling, endringsteori og evaluering av virksomheten.</p>
+        <span class="card-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<div class="cta-bar"><div class="cta-inner"><p>Finner du ikke det du leter etter? Vi hjelper deg videre med gratis rådgivning.</p><a href="radgivning.html">Book 1:1 rådgivning &rarr;</a></div></div>
+<footer class="footer"><p>Arena for nabolagshus &middot; Øvre Slottsgate 3, 0157 Oslo &middot; <a href="mailto:hei@nabolagshus.no">hei@nabolagshus.no</a></p></footer>
+</body>
+</html>

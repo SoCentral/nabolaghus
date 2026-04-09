@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samlinger — Arena for nabolagshus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.saml-hero{max-width:1080px;margin:0 auto;padding:3.5rem 2rem 2.5rem;text-align:center}
+.saml-hero h1{font-family:var(--font-display);font-size:clamp(1.75rem,4vw,2.3rem);font-weight:400;margin-bottom:.75rem}
+.saml-hero p{font-size:1rem;color:var(--text-secondary);max-width:520px;margin:0 auto;line-height:1.65}
+.saml-content{max-width:1080px;margin:0 auto;padding:0 2rem 4rem}
+
+.upcoming{margin-bottom:3rem}
+.upcoming h2{font-family:var(--font-display);font-size:1.2rem;font-weight:400;margin-bottom:1.25rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.event-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:2rem;margin-bottom:16px;position:relative;overflow:hidden}
+.event-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--forest-300)}
+.event-meta{display:flex;gap:1rem;align-items:center;margin-bottom:1rem;flex-wrap:wrap}
+.event-date{font-size:.8rem;font-weight:500;color:var(--forest-400);background:var(--forest-50);padding:.3rem .7rem;border-radius:var(--radius)}
+.event-format{font-size:.75rem;color:var(--text-muted)}
+.event-card h3{font-family:var(--font-display);font-size:1.1rem;font-weight:400;margin-bottom:.5rem}
+.event-card p{font-size:.885rem;color:var(--text-secondary);line-height:1.65}
+.event-card .event-details{margin-top:.75rem;font-size:.85rem;color:var(--text-secondary);line-height:1.6}
+.event-card .event-details strong{color:var(--text-primary);font-weight:500}
+.event-cta{display:inline-block;margin-top:1rem;font-size:.85rem;font-weight:500;color:#fff;background:var(--forest-400);padding:.5rem 1.15rem;border-radius:var(--radius);text-decoration:none;transition:background .15s}
+.event-cta:hover{background:var(--forest-500)}
+
+.past h2{font-family:var(--font-display);font-size:1.2rem;font-weight:400;margin-bottom:1.25rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.past-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;margin-bottom:12px;transition:border-color .15s}
+.past-card:hover{border-color:var(--sand-300)}
+.past-card .past-meta{font-size:.75rem;color:var(--text-muted);margin-bottom:.3rem}
+.past-card h3{font-family:var(--font-display);font-size:.975rem;font-weight:400;margin-bottom:.35rem}
+.past-card p{font-size:.835rem;color:var(--text-secondary);line-height:1.55}
+.past-link{display:inline-block;font-size:.78rem;font-weight:500;color:var(--ocean-400);text-decoration:none;margin-top:.4rem}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.saml-hero,.upcoming,.past{animation:fadeUp .5s ease both}
+.upcoming{animation-delay:.05s}.past{animation-delay:.1s}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a href="index.html" class="nav-logo">Arena for nabolagshus</a>
+<div class="nav-links">
+<a href="index.html" >Hjem</a>
+<a href="verktoykasse.html" >Verktøykasse</a>
+<a href="samlinger.html" class="active">Samlinger</a>
+<a href="radgivning.html" >Rådgivning</a>
+<a href="inspirasjon.html" >Inspirasjon</a>
+</div></div></nav>
+
+<header class="saml-hero">
+  <h1>Samlinger</h1>
+  <p>Digitale og fysiske samlinger der vi deler kunnskap, erfaringer og praktiske løsninger for nabolagshus.</p>
+</header>
+
+<main class="saml-content">
+
+<section class="upcoming">
+  <h2>Kommende samlinger</h2>
+
+  <div class="event-card">
+    <div class="event-meta">
+      <span class="event-date">14. april 2026</span>
+      <span class="event-format">Kl. 17.00–19.15 &middot; Digitalt på Zoom</span>
+    </div>
+    <h3>Hvordan får vi med oss ungdommen?</h3>
+    <p>Hvordan kan vi åpne dørene for unge — ikke bare som deltakere, men som medeiere og drivkrefter? Vi utforsker nye måter å engasjere unge, gi dem ekte eierskap, og fylle rommene med innhold de bryr seg om.</p>
+    <div class="event-details">
+      <strong>Du får høre om:</strong> Samfunnsoppdraget «Ingen barn og unge utenfor!», Det Umulige Huset (Rauma), Nabolagsutviklerne (Oslo), Utenforregnskapet fra KS, Fritidsklubbløftet fra Ungdom og Fritid, og Grendehusfolka på Sagene.
+    </div>
+    <a href="https://www.addevent.com/event/k2l7g3tzr6q1" class="event-cta">Meld deg på &rarr;</a>
+  </div>
+
+  <div class="event-card">
+    <div class="event-meta">
+      <span class="event-date">Dato kommer</span>
+      <span class="event-format">Siste samling før sommeren</span>
+    </div>
+    <h3>Nabolagshus som beredskapshus</h3>
+    <p>Hvordan kan nabolagshus fungere som viktige møteplasser som styrker både fysisk og psykologisk beredskap i lokalsamfunnet?</p>
+  </div>
+</section>
+
+<section class="past">
+  <h2>Tidligere samlinger</h2>
+
+  <div class="past-card">
+    <div class="past-meta">Samling 5 &middot; 11. februar</div>
+    <h3>Gruppesparring på søknadsordninger</h3>
+    <p>Tips til søknadsordninger og hvordan skrive gode søknader — med fire stiftelser/tilskuddsordninger til stede for direkte sparring.</p>
+    <a href="https://drive.google.com/drive/folders/1BmEr_0ItGnfNhuRQALc0TxzhbzejtRf-" class="past-link" target="_blank">Se presentasjonene &rarr;</a>
+  </div>
+
+  <div class="past-card">
+    <div class="past-meta">Samling 4 &middot; 29. januar</div>
+    <h3>Istandsetting og vedlikehold</h3>
+    <p>Hvordan ta gode langsiktige valg for vedlikehold som er økonomisk, miljømessig og sosialt bærekraftige.</p>
+    <a href="https://drive.google.com/drive/folders/1GoWwWPk40JhHMd9Z-8VYx5Np7VAKv9fg" class="past-link" target="_blank">Se presentasjonene &rarr;</a>
+  </div>
+
+  <div class="past-card">
+    <div class="past-meta">Samling 3 &middot; 2. desember</div>
+    <h3>Samarbeidsmodeller</h3>
+    <p>Hvordan bygge partnerskap og samarbeidsmodeller som gjør nabolagshuset mer robust — både økonomisk og sosialt.</p>
+    <a href="https://drive.google.com/drive/folders/1q7TRiM-QvP3RDC4-Y6wKUISDcdD_jV2q" class="past-link" target="_blank">Se presentasjonene &rarr;</a>
+  </div>
+
+  <div class="past-card">
+    <div class="past-meta">Samling 2 &middot; 9. november</div>
+    <h3>Hvordan få økonomien til å gå rundt?</h3>
+    <p>Styreledere Thomas Evensen (Biermannsgården) og Erlend Eidem Engan (Lånke Ungdomslag) om å drive hus på en økonomisk bærekraftig måte.</p>
+    <a href="https://docs.google.com/presentation/d/1EO2cX-THJlCB-3Hapv7T5C3-5OaPHGlPI3Rh3JgU0tY/edit" class="past-link" target="_blank">Se presentasjonen &rarr;</a>
+  </div>
+
+  <div class="past-card">
+    <div class="past-meta">Samling 1 &middot; 11. september</div>
+    <h3>Nabolagshus som lokalsamfunnsbyggere</h3>
+    <p>Gro Sandkjær Hanssen fra OsloMet/NIBR om nabolagshus som sosial infrastruktur og demokratibyggere.</p>
+    <a href="https://www.nabolaghus.no/s/Hanssen_Nasjonal-kunnskapsarena-for-nabolagshus_sept-2025-1.pdf" class="past-link" target="_blank">Se presentasjonen &rarr;</a>
+  </div>
+</section>
+
+</main>
+<footer class="footer"><p>Arena for nabolagshus &middot; Øvre Slottsgate 3, 0157 Oslo &middot; <a href="mailto:hei@nabolagshus.no">hei@nabolagshus.no</a></p></footer></body></html>

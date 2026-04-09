@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rådgivning 1:1 — Arena for nabolagshus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.rad-hero{max-width:1080px;margin:0 auto;padding:3.5rem 2rem 1rem;text-align:center}
+.rad-hero h1{font-family:var(--font-display);font-size:clamp(1.75rem,4vw,2.3rem);font-weight:400;margin-bottom:.5rem}
+.rad-hero .subtitle{font-family:var(--font-display);font-size:1.05rem;font-weight:400;color:var(--forest-400);font-style:italic;margin-bottom:1rem}
+.rad-hero p{font-size:1rem;color:var(--text-secondary);max-width:560px;margin:0 auto;line-height:1.65}
+.rad-content{max-width:1080px;margin:0 auto;padding:0 2rem 4rem}
+
+.topics{margin:2rem 0 3rem;background:var(--sand-100);border-radius:var(--radius-xl);padding:1.75rem 2rem}
+.topics h2{font-family:var(--font-display);font-size:1.1rem;font-weight:400;margin-bottom:.75rem}
+.topics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.topic-item{font-size:.82rem;color:var(--text-secondary);padding:.35rem 0;line-height:1.4}
+.topic-item strong{color:var(--text-primary);font-weight:500}
+
+.advisors-section h2{font-family:var(--font-display);font-size:1.2rem;font-weight:400;margin-bottom:.5rem}
+.advisors-section .advisors-intro{font-size:.875rem;color:var(--text-secondary);margin-bottom:1.5rem;line-height:1.6}
+.advisors-section .advisors-intro a{color:var(--ocean-400);text-decoration:none}
+
+.advisor-card{display:flex;gap:1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:14px;transition:border-color .15s}
+.advisor-card:hover{border-color:var(--sand-300)}
+.advisor-avatar{width:52px;height:52px;border-radius:50%;background:var(--forest-50);color:var(--forest-400);display:flex;align-items:center;justify-content:center;font-weight:500;font-size:.85rem;flex-shrink:0}
+.advisor-info{flex:1}
+.advisor-info h3{font-family:var(--font-display);font-size:1rem;font-weight:400;margin-bottom:.2rem}
+.advisor-org{font-size:.78rem;color:var(--text-muted);margin-bottom:.5rem}
+.advisor-org a{color:var(--ocean-400);text-decoration:none}
+.advisor-desc{font-size:.85rem;color:var(--text-secondary);line-height:1.55;margin-bottom:.5rem}
+.advisor-specs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin-bottom:.75rem}
+.advisor-specs li{font-size:.72rem;font-weight:500;color:var(--ocean-400);background:var(--ocean-50);padding:.25rem .55rem;border-radius:var(--radius)}
+.advisor-book{font-size:.82rem;font-weight:500;color:var(--forest-400);text-decoration:none}
+.advisor-book:hover{color:var(--forest-500)}
+
+.rad-note{margin-top:2.5rem;background:var(--sand-100);border-radius:var(--radius-lg);padding:1.5rem 2rem}
+.rad-note h3{font-family:var(--font-display);font-size:1rem;font-weight:400;margin-bottom:.5rem}
+.rad-note p{font-size:.855rem;color:var(--text-secondary);line-height:1.6}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.rad-hero,.topics,.advisors-section,.rad-note{animation:fadeUp .5s ease both}
+.topics{animation-delay:.05s}.advisors-section{animation-delay:.1s}.rad-note{animation-delay:.15s}
+@media(max-width:640px){.advisor-card{flex-direction:column}.advisor-avatar{width:44px;height:44px;font-size:.75rem}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a href="index.html" class="nav-logo">Arena for nabolagshus</a>
+<div class="nav-links">
+<a href="index.html" >Hjem</a>
+<a href="verktoykasse.html" >Verktøykasse</a>
+<a href="samlinger.html" >Samlinger</a>
+<a href="radgivning.html" class="active">Rådgivning</a>
+<a href="inspirasjon.html" >Inspirasjon</a>
+</div></div></nav>
+
+<header class="rad-hero">
+  <h1>Rådgivningstjeneste 1:1</h1>
+  <p class="subtitle">Helt gratis</p>
+  <p>Lavterskel digital rådgivning for deg som trenger sparring, råd og tips til ditt nabolagshus, grendehus eller møteplass. I tvil? Send en mail til <a href="mailto:hei@nabolagshus.no" style="color:var(--ocean-400);text-decoration:none">hei@nabolagshus.no</a>.</p>
+</header>
+
+<main class="rad-content">
+
+<div class="topics">
+  <h2>Eksempler på temaer du kan spørre om</h2>
+  <div class="topics-grid">
+    <div class="topic-item"><strong>Oppstart</strong> — behovskartlegging, formål og målgrupper</div>
+    <div class="topic-item"><strong>Drift og økonomi</strong> — budsjett, kontrakter, utleie, kostnadsbesparelser</div>
+    <div class="topic-item"><strong>Finansiering</strong> — søknadsordninger og skrivetips</div>
+    <div class="topic-item"><strong>Organisering</strong> — organisasjonsform, styringsstruktur, roller</div>
+    <div class="topic-item"><strong>Partnerskap</strong> — lokale partnerskap, samarbeidsmodeller</div>
+    <div class="topic-item"><strong>Vedlikehold</strong> — kartlegging og planlegging av istandsetting</div>
+    <div class="topic-item"><strong>Kommunikasjon</strong> — årsrapporter, effektdeling, rammevilkårspåvirkning</div>
+    <div class="topic-item"><strong>Frivillighet</strong> — koble på frivillige som bærekraftig driftsmodell</div>
+    <div class="topic-item"><strong>Måling</strong> — dokumentere aktivitet og effekt</div>
+    <div class="topic-item"><strong>Kommunesamarbeid</strong> — kostnadsbesparelser og vinn-vinn</div>
+  </div>
+</div>
+
+<section class="advisors-section">
+  <h2>Rådgiverne</h2>
+  <p class="advisors-intro">Book tid med en rådgiver som passer ditt behov. Usikker? Send en mail til <a href="mailto:hei@nabolagshus.no">hei@nabolagshus.no</a> med beskrivelse av hva du vil sparre om, så peker vi deg videre.</p>
+  <div class="advisor-card">
+      <div class="advisor-avatar">CK</div>
+      <div class="advisor-info">
+        <h3>Christoffer Knagenhjelm</h3>
+        <p class="advisor-org">Rådgiver fra <a href="https://www.ungdomslag.no/" target="_blank">Noregs Ungdomslag</a></p>
+        <p class="advisor-desc">Utdannet arkeolog med lang erfaring fra restaurering av bygg og bærekraftig utvikling av historiske bygninger. Kjenner de praktiske og økonomiske utfordringene i frivillig sektor.</p>
+        <ul class="advisor-specs"><li>Restaurering og vedlikehold</li><li>Bygningsfag og kulturvern</li><li>Bærekraftig drift</li><li>Frivillig organisering</li></ul>
+        <a href="https://outlook.office.com/book/RdgivingstjenesteNasjonalkunnskapsarenafornabolagshus@ungdomslag.no/?ismsaljsauthenabled" class="advisor-book" target="_blank">Book rådgivning &rarr;</a>
+      </div>
+    </div><div class="advisor-card">
+      <div class="advisor-avatar">IS</div>
+      <div class="advisor-info">
+        <h3>Ida Søderstrøm</h3>
+        <p class="advisor-org">Rådgiver fra <a href="https://www.ungdomslag.no/" target="_blank">Noregs Ungdomslag</a></p>
+        <p class="advisor-desc">Skarpt blikk for hva som skal til for å få et kulturhus til å fungere i hverdagen. Kjenner frivillig sektor fra innsiden.</p>
+        <ul class="advisor-specs"><li>Drift og vedlikehold</li><li>Søknadsskriving</li><li>Arrangement og frivillige</li><li>Interne samarbeidsprosesser</li></ul>
+        <a href="https://outlook.office.com/book/RdgivingstjenesteNasjonalkunnskapsarenafornabolagshus@ungdomslag.no/?ismsaljsauthenabled" class="advisor-book" target="_blank">Book rådgivning &rarr;</a>
+      </div>
+    </div><div class="advisor-card">
+      <div class="advisor-avatar">SF</div>
+      <div class="advisor-info">
+        <h3>Sofie Furu</h3>
+        <p class="advisor-org">Rådgiver fra <a href="https://www.socentral.no/" target="_blank">SoCentral</a></p>
+        <p class="advisor-desc">Statsviter og partner i SoCentral. Har ledet Norges største miljø for samfunnsinnovasjon og jobbet mye med demokratisk innovasjon og nabolagshus.</p>
+        <ul class="advisor-specs"><li>Samarbeid og partnerskapsmodeller</li><li>Behovskartlegging</li><li>Måling og effekt</li></ul>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScPkI3MN-InnfcOrMRCVAbwE4NaqRyYJfOvy80zFedFbpMtnA/viewform" class="advisor-book" target="_blank">Book rådgivning &rarr;</a>
+      </div>
+    </div><div class="advisor-card">
+      <div class="advisor-avatar">MH</div>
+      <div class="advisor-info">
+        <h3>Mette Øinæs Habberstad</h3>
+        <p class="advisor-org">Rådgiver fra <a href="https://www.socentral.no/" target="_blank">SoCentral</a></p>
+        <p class="advisor-desc">Lang fartstid fra organisasjonslivet med bred erfaring fra frivillighet, mobilisering og kommunikasjon. Har ledet arbeidet med å utvikle Biermannsgården på Sagene.</p>
+        <ul class="advisor-specs"><li>Kommunikasjon</li><li>Mobilisering av ressurser</li><li>Behov og muligheter i lokalmiljøet</li><li>Forankring og partnerskap</li></ul>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScPkI3MN-InnfcOrMRCVAbwE4NaqRyYJfOvy80zFedFbpMtnA/viewform" class="advisor-book" target="_blank">Book rådgivning &rarr;</a>
+      </div>
+    </div><div class="advisor-card">
+      <div class="advisor-avatar">TE</div>
+      <div class="advisor-info">
+        <h3>Thomas Evensen</h3>
+        <p class="advisor-org">Rådgiver fra <a href="https://www.socentral.no/" target="_blank">SoCentral</a></p>
+        <p class="advisor-desc">Utdannet teknolog med lang organisasjonserfaring. Styreleder i De Biermannske Legater og styremedlem i Holmlia Kulturkafé.</p>
+        <ul class="advisor-specs"><li>Økonomi</li><li>Drift</li><li>Teknologi</li><li>Organisasjonsformer</li></ul>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScPkI3MN-InnfcOrMRCVAbwE4NaqRyYJfOvy80zFedFbpMtnA/viewform" class="advisor-book" target="_blank">Book rådgivning &rarr;</a>
+      </div>
+    </div><div class="advisor-card">
+      <div class="advisor-avatar">HI</div>
+      <div class="advisor-info">
+        <h3>Håkon Iversen</h3>
+        <p class="advisor-org">Rådgiver fra <a href="https://www.socentral.no/" target="_blank">SoCentral</a></p>
+        <p class="advisor-desc">Sivilingeniør og gründer av SoCentral. Har jobbet med prosjekt- og selskapsutvikling gjennom et langt yrkesliv og utviklet SoCentrals metode for måling av samfunnseffekt.</p>
+        <ul class="advisor-specs"><li>Organisasjonsutvikling</li><li>Prosjektutvikling</li><li>Samarbeid og partnerskap</li><li>Måling av effekt</li></ul>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScPkI3MN-InnfcOrMRCVAbwE4NaqRyYJfOvy80zFedFbpMtnA/viewform" class="advisor-book" target="_blank">Book rådgivning &rarr;</a>
+      </div>
+    </div>
+</section>
+
+<div class="rad-note">
+  <h3>Hvorfor tester vi dette?</h3>
+  <p>Det er viktig at kunnskapen fra samlingene kan tas i bruk. Vi vet at individuell rådgivning hjelper å oversette verktøyene slik at de treffer akkurat ditt tilfelle. Dette er en pilot — vi justerer tilbudet basert på hva vi lærer. Tjenesten er for nabolagshus, grendehus, kulturhus og andre lokalsamfunnsarenaer — enten du er i oppstartsfasen eller godt etablert.</p>
+</div>
+
+</main>
+<footer class="footer"><p>Arena for nabolagshus &middot; Øvre Slottsgate 3, 0157 Oslo &middot; <a href="mailto:hei@nabolagshus.no">hei@nabolagshus.no</a></p></footer></body></html>

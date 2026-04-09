@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspirasjon — Arena for nabolagshus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.insp-hero{max-width:1080px;margin:0 auto;padding:3.5rem 2rem 2.5rem;text-align:center}
+.insp-hero h1{font-family:var(--font-display);font-size:clamp(1.75rem,4vw,2.3rem);font-weight:400;margin-bottom:.75rem}
+.insp-hero p{font-size:1rem;color:var(--text-secondary);max-width:500px;margin:0 auto;line-height:1.65}
+.insp-content{max-width:1080px;margin:0 auto;padding:0 2rem 4rem}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.blog-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+.blog-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.blog-img{height:180px;background:var(--sand-100);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.blog-img img{width:100%;height:100%;object-fit:cover}
+.blog-body{padding:1.5rem}
+.blog-meta{font-size:.75rem;color:var(--text-muted);margin-bottom:.5rem}
+.blog-body h3{font-family:var(--font-display);font-size:1.05rem;font-weight:400;margin-bottom:.4rem;line-height:1.3}
+.blog-body p{font-size:.855rem;color:var(--text-secondary);line-height:1.55}
+.blog-body .arr{font-size:.8rem;color:var(--ocean-400);margin-top:.75rem;display:inline-block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.insp-hero,.blog-grid{animation:fadeUp .5s ease both}
+.blog-grid{animation-delay:.1s}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a href="index.html" class="nav-logo">Arena for nabolagshus</a>
+<div class="nav-links">
+<a href="index.html" >Hjem</a>
+<a href="verktoykasse.html" >Verktøykasse</a>
+<a href="samlinger.html" >Samlinger</a>
+<a href="radgivning.html" >Rådgivning</a>
+<a href="inspirasjon.html" class="active">Inspirasjon</a>
+</div></div></nav>
+
+<header class="insp-hero">
+  <h1>Inspirasjon</h1>
+  <p>Intervjuer, caser og nyheter fra nabolagshus over hele landet.</p>
+</header>
+
+<main class="insp-content">
+<div class="blog-grid">
+
+  <a href="https://www.nabolaghus.no/inspirasjon/hringsuttalelser-p-representantforslag-73-s-om-bedre-rammevilkr-for-organisasjonseide-kulturbygg" class="blog-card">
+    <div class="blog-img" style="background:var(--forest-50);display:flex;align-items:center;justify-content:center">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--forest-300)" stroke-width="1.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+    </div>
+    <div class="blog-body">
+      <div class="blog-meta">30. januar 2025 &middot; Sofie Furu</div>
+      <h3>Høringsuttalelser om rammevilkår for organisasjonseide kulturbygg</h3>
+      <p>SoCentral og Noregs Ungdomslag har levert høringsuttalelser på representantforslag 73 S.</p>
+      <span class="arr">Les mer &rarr;</span>
+    </div>
+  </a>
+
+  <a href="https://www.nabolaghus.no/inspirasjon/blog-post-title-four-57xt2" class="blog-card">
+    <div class="blog-img" style="background:var(--amber-50);display:flex;align-items:center;justify-content:center">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--amber-300)" stroke-width="1.5" stroke-linecap="round"><path d="M2 20h20M5 20V10l7-6 7 6v10M9 20v-6h6v6"/></svg>
+    </div>
+    <div class="blog-body">
+      <div class="blog-meta">19. juni 2025 &middot; Sofie Furu</div>
+      <h3>Hvordan jobber Biermannsgården med økonomi?</h3>
+      <p>Intervju med styreleder Thomas Evensen om hvordan et 400 år gammelt nabolagshus fikk driften til å gå rundt.</p>
+      <span class="arr">Les mer &rarr;</span>
+    </div>
+  </a>
+
+</div>
+</main>
+<footer class="footer"><p>Arena for nabolagshus &middot; Øvre Slottsgate 3, 0157 Oslo &middot; <a href="mailto:hei@nabolagshus.no">hei@nabolagshus.no</a></p></footer></body></html>

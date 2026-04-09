@@ -3,243 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Verktøykasse — Arena for nabolagshus</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<title>Arena for nabolagshus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --sand-50:#faf9f6;--sand-100:#f3f1ec;--sand-200:#e8e4db;--sand-300:#d4cfc3;--sand-400:#a9a393;--sand-500:#7a756a;
-  --forest-50:#eef5f0;--forest-100:#d4e8d9;--forest-200:#a3cead;--forest-300:#5fa872;--forest-400:#3d7a4f;--forest-500:#1d4a2a;--forest-600:#0f3318;
-  --ocean-50:#edf3f9;--ocean-100:#d2e3f2;--ocean-200:#9ec4e1;--ocean-300:#5a9bc5;--ocean-400:#2d6f9e;--ocean-500:#1a4d72;
-  --amber-50:#fdf6ea;--amber-100:#f8e6c2;--amber-200:#efc576;--amber-300:#d9a23e;--amber-400:#a87820;--amber-500:#7a5615;
-  --coral-50:#fdf0ec;--coral-100:#f8d5ca;--coral-200:#ed9e86;--coral-300:#d46a47;--coral-400:#a3462a;--coral-500:#72301d;
-  --text-primary:#2c2a25;--text-secondary:#6b6760;--text-muted:#9e998f;
-  --bg:#faf9f6;--bg-card:#ffffff;--border:#e8e4db;--border-light:#f0ede6;
-  --radius:10px;--radius-lg:14px;--radius-xl:20px;
-  --font-display:'Fraunces', Georgia, serif;--font-body:'DM Sans', system-ui, sans-serif;
-}
-html{font-size:16px;scroll-behavior:smooth}
-body{font-family:var(--font-body);color:var(--text-primary);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.6}
+.home-hero{max-width:1080px;margin:0 auto;padding:5rem 2rem 3.5rem;text-align:center}
+.home-hero .eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--forest-400);font-weight:500;margin-bottom:.75rem}
+.home-hero h1{font-family:var(--font-display);font-size:clamp(2rem,5vw,3rem);font-weight:400;line-height:1.15;letter-spacing:-.02em;margin-bottom:1.25rem}
+.home-hero h1 em{font-style:italic;color:var(--forest-400)}
+.home-hero .lead{font-size:1.1rem;color:var(--text-secondary);max-width:600px;margin:0 auto 2rem;line-height:1.7}
+.home-hero .cta-btn{display:inline-block;font-size:.9rem;font-weight:500;color:#fff;background:var(--forest-400);padding:.7rem 1.5rem;border-radius:var(--radius);text-decoration:none;transition:background .15s}
+.home-hero .cta-btn:hover{background:var(--forest-500)}
+.home-hero .cta-sub{font-size:.78rem;color:var(--text-muted);margin-top:.6rem}
 
-/* NAV */
-.nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light);padding:0 2rem}
-.nav-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
-.nav-logo{font-family:var(--font-display);font-weight:500;font-size:1.05rem;color:var(--forest-500);text-decoration:none;letter-spacing:-.01em}
-.nav-links{display:flex;gap:1.75rem;align-items:center}
-.nav-links a{font-size:.835rem;color:var(--text-secondary);text-decoration:none;font-weight:400;transition:color .15s}
-.nav-links a:hover{color:var(--text-primary)}
-.nav-links a.active{color:var(--forest-400);font-weight:500}
+.offerings{max-width:1080px;margin:0 auto;padding:0 2rem 4rem}
+.offerings h2{font-family:var(--font-display);font-size:1.4rem;font-weight:400;text-align:center;margin-bottom:2rem}
+.off-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.off-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:2rem;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+.off-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.off-card .off-icon{width:48px;height:48px;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.off-card h3{font-family:var(--font-display);font-size:1.1rem;font-weight:400;margin-bottom:.5rem}
+.off-card p{font-size:.875rem;color:var(--text-secondary);line-height:1.6}
+.off-card .arr{font-size:.8rem;color:var(--text-muted);margin-top:.75rem;display:inline-block;transition:transform .15s}
+.off-card:hover .arr{transform:translateX(3px);color:var(--text-primary)}
 
-/* HERO */
-.hero{max-width:1080px;margin:0 auto;padding:4rem 2rem 3rem;text-align:center}
-.hero-eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--forest-400);font-weight:500;margin-bottom:.75rem}
-.hero h1{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,2.8rem);font-weight:400;line-height:1.2;letter-spacing:-.02em;color:var(--text-primary);margin-bottom:1rem}
-.hero h1 em{font-style:italic;color:var(--forest-400)}
-.hero p{font-size:1.05rem;color:var(--text-secondary);max-width:540px;margin:0 auto;line-height:1.65}
+.why-section{max-width:1080px;margin:0 auto;padding:0 2rem 4rem}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.why-card{background:var(--forest-50);border-radius:var(--radius-lg);padding:1.5rem}
+.why-card h4{font-family:var(--font-display);font-size:.95rem;font-weight:400;margin-bottom:.35rem}
+.why-card p{font-size:.82rem;color:var(--text-secondary);line-height:1.55}
 
-/* PHASE SECTIONS */
-.phases{max-width:1080px;margin:0 auto;padding:0 2rem 4rem}
-.phase{margin-bottom:3.5rem}
-.phase-header{display:flex;align-items:baseline;gap:12px;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
-.phase-num{font-family:var(--font-display);font-size:.8rem;font-weight:500;letter-spacing:.02em}
-.phase-num.p1{color:var(--forest-400)}
-.phase-num.p2{color:var(--ocean-400)}
-.phase-num.p3{color:var(--amber-400)}
-.phase-title{font-family:var(--font-display);font-size:1.15rem;font-weight:400;color:var(--text-primary)}
+.bg-section{max-width:1080px;margin:0 auto;padding:0 2rem 4rem}
+.bg-section h2{font-family:var(--font-display);font-size:1.3rem;font-weight:400;margin-bottom:1rem}
+.bg-section .bg-text{font-size:.925rem;color:var(--text-secondary);line-height:1.7;max-width:720px}
+.bg-section .bg-text a{color:var(--ocean-400);text-decoration:none}
 
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
-.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;position:relative;overflow:hidden;display:flex;flex-direction:column}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--radius-lg) var(--radius-lg) 0 0;opacity:0;transition:opacity .2s ease}
-.card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.06);border-color:var(--sand-300)}
-.card:hover::before{opacity:1}
-.phase.p1 .card::before{background:var(--forest-300)}
-.phase.p2 .card::before{background:var(--ocean-300)}
-.phase.p3 .card::before{background:var(--amber-300)}
+.partners{max-width:1080px;margin:0 auto;padding:0 2rem 3rem;text-align:center}
+.partners h2{font-family:var(--font-display);font-size:1.1rem;font-weight:400;color:var(--text-muted);margin-bottom:1.25rem}
+.partner-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;align-items:center;opacity:.6}
+.partner-logos span{font-size:.8rem;color:var(--text-muted);font-weight:500;white-space:nowrap}
 
-.card-icon{width:40px;height:40px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.1rem}
-.phase.p1 .card-icon{background:var(--forest-50);color:var(--forest-400)}
-.phase.p2 .card-icon{background:var(--ocean-50);color:var(--ocean-400)}
-.phase.p3 .card-icon{background:var(--amber-50);color:var(--amber-400)}
+.join-section{max-width:1080px;margin:0 auto;padding:0 2rem 4rem}
+.join-inner{background:var(--forest-50);border:1px solid var(--forest-100);border-radius:var(--radius-xl);padding:2.5rem;text-align:center}
+.join-inner h2{font-family:var(--font-display);font-size:1.3rem;font-weight:400;margin-bottom:.75rem}
+.join-inner p{font-size:.925rem;color:var(--text-secondary);max-width:500px;margin:0 auto 1.25rem;line-height:1.6}
 
-.card h3{font-family:var(--font-display);font-size:1.05rem;font-weight:400;line-height:1.3;margin-bottom:.4rem;letter-spacing:-.01em}
-.card p{font-size:.855rem;color:var(--text-secondary);line-height:1.55;flex:1}
-.card-arrow{font-size:.8rem;color:var(--text-muted);margin-top:.75rem;transition:color .15s,transform .15s;display:inline-block}
-.card:hover .card-arrow{color:var(--text-primary);transform:translateX(3px)}
-
-/* CTA */
-.cta-bar{max-width:1080px;margin:0 auto 3rem;padding:0 2rem}
-.cta-inner{background:var(--forest-50);border:1px solid var(--forest-100);border-radius:var(--radius-lg);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.cta-inner p{font-size:.925rem;color:var(--forest-500)}
-.cta-inner a{font-size:.875rem;font-weight:500;color:var(--bg-card);background:var(--forest-400);padding:.55rem 1.25rem;border-radius:var(--radius);text-decoration:none;transition:background .15s}
-.cta-inner a:hover{background:var(--forest-500)}
-
-/* FOOTER */
-.footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
-.footer p{font-size:.8rem;color:var(--text-muted)}
-.footer a{color:var(--text-secondary);text-decoration:none}
-
-/* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.hero,.phase,.cta-bar{animation:fadeUp .5s ease both}
-.phase:nth-child(2){animation-delay:.1s}
-.phase:nth-child(3){animation-delay:.2s}
-.cta-bar{animation-delay:.3s}
-.card{animation:fadeUp .4s ease both}
-.phase:nth-child(1) .card:nth-child(1){animation-delay:.15s}
-.phase:nth-child(1) .card:nth-child(2){animation-delay:.2s}
-.phase:nth-child(2) .card:nth-child(1){animation-delay:.25s}
-.phase:nth-child(2) .card:nth-child(2){animation-delay:.3s}
-.phase:nth-child(2) .card:nth-child(3){animation-delay:.35s}
-.phase:nth-child(3) .card:nth-child(1){animation-delay:.4s}
-.phase:nth-child(3) .card:nth-child(2){animation-delay:.45s}
-.phase:nth-child(3) .card:nth-child(3){animation-delay:.5s}
-.phase:nth-child(3) .card:nth-child(4){animation-delay:.55s}
-
-@media(max-width:640px){
-  .nav{padding:0 1rem}
-  .nav-links{gap:1rem}
-  .hero{padding:2.5rem 1.25rem 2rem}
-  .phases{padding:0 1.25rem 3rem}
-  .cta-bar{padding:0 1.25rem}
-  .card-grid{grid-template-columns:1fr}
-}
+.home-hero,.offerings,.why-section,.bg-section,.partners,.join-section{animation:fadeUp .5s ease both}
+.offerings{animation-delay:.1s}.why-section{animation-delay:.15s}.bg-section{animation-delay:.2s}
 </style>
 </head>
 <body>
+<nav class="nav"><div class="nav-inner">
+<a href="index.html" class="nav-logo">Arena for nabolagshus</a>
+<div class="nav-links">
+<a href="index.html" class="active">Hjem</a>
+<a href="verktoykasse.html" >Verktøykasse</a>
+<a href="samlinger.html" >Samlinger</a>
+<a href="radgivning.html" >Rådgivning</a>
+<a href="inspirasjon.html" >Inspirasjon</a>
+</div></div></nav>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">Arena for nabolagshus</a>
-    <div class="nav-links">
-      <a href="#">Hjem</a>
-      <a href="#">Inspirasjon</a>
-      <a href="#" class="active">Verktøykasse</a>
-      <a href="#">Samlinger</a>
-      <a href="#">Rådgivning</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="hero-eyebrow">Verktøykasse</div>
-  <h1>Alt du trenger for å drive et <em>nabolagshus</em></h1>
-  <p>Praktiske verktøy, maler og eksempler fra ekte hus - organisert etter hvor du er i prosessen. Velg tema eller bla gjennom fasene.</p>
+<header class="home-hero">
+  <div class="eyebrow">Arena for nabolagshus</div>
+  <h1>Et læringsrom for deg som bygger <em>fellesskap</em></h1>
+  <p class="lead">Vi samler, styrker og deler kunnskap om hvordan drive gode nabolagshus. Gjennom verktøy, samlinger og rådgivning gjør vi det enklere å skape levende og inkluderende møteplasser over hele landet.</p>
+  <a href="https://landing.mailerlite.com/webforms/landing/f6b1z5" class="cta-btn">Bli med i kunnskapsarenaen &rarr;</a>
+  <p class="cta-sub">Gratis &middot; Nyhetsbrev, samlinger og 1:1 rådgivning</p>
 </header>
 
-<section class="phases">
-
-  <div class="phase p1">
-    <div class="phase-header">
-      <span class="phase-num p1">Fase 1</span>
-      <span class="phase-title">Starte opp</span>
-    </div>
-    <div class="card-grid">
-      <a href="verktoykasse-okonomi.html" class="card">
-        <div class="card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </div>
-        <h3>Kartlegging og planlegging</h3>
-        <p>Finn ut hva nabolaget trenger, kartlegg behov og test ideene dine før du setter i gang.</p>
-        <span class="card-arrow">&rarr;</span>
-      </a>
-      <a href="#" class="card">
-        <div class="card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/></svg>
-        </div>
-        <h3>Organisasjonsform</h3>
-        <p>Velg riktig juridisk struktur. Stiftelse, forening, samvirke eller AS - og avklar roller og avtaler.</p>
-        <span class="card-arrow">&rarr;</span>
-      </a>
-    </div>
+<section class="offerings">
+  <h2>Hva tilbyr arenaen?</h2>
+  <div class="off-grid">
+    <a href="verktoykasse.html" class="off-card">
+      <div class="off-icon" style="background:var(--ocean-50);color:var(--ocean-400)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+      </div>
+      <h3>Verktøykasse</h3>
+      <p>Praktiske maler, steg-for-steg-guider og eksempler fra ekte hus — organisert etter hvor du er i prosessen.</p>
+      <span class="arr">&rarr;</span>
+    </a>
+    <a href="samlinger.html" class="off-card">
+      <div class="off-icon" style="background:var(--amber-50);color:var(--amber-400)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <h3>Samlinger</h3>
+      <p>Digitale og fysiske samlinger om finansiering, vedlikehold, frivillighet, kommunesamarbeid og mer.</p>
+      <span class="arr">&rarr;</span>
+    </a>
+    <a href="radgivning.html" class="off-card">
+      <div class="off-icon" style="background:var(--forest-50);color:var(--forest-400)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <h3>1:1 Rådgivning</h3>
+      <p>Gratis, lavterskel digital rådgivning fra fagpersoner med erfaring fra drift av nabolagshus.</p>
+      <span class="arr">&rarr;</span>
+    </a>
   </div>
-
-  <div class="phase p2">
-    <div class="phase-header">
-      <span class="phase-num p2">Fase 2</span>
-      <span class="phase-title">Bygge og finansiere</span>
-    </div>
-    <div class="card-grid">
-      <a href="verktoykasse-okonomi.html" class="card">
-        <div class="card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        </div>
-        <h3>Økonomi og finansiering</h3>
-        <p>Kostnader, inntektsstrømmer, tilskudd og bærekraftige økonomiske modeller.</p>
-        <span class="card-arrow">&rarr;</span>
-      </a>
-      <a href="#" class="card">
-        <div class="card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
-        <h3>Partnerskap og samarbeid</h3>
-        <p>Bygg partnerskap med kommune, næringsliv og lokale aktører. Inkluderer kommunesamarbeid.</p>
-        <span class="card-arrow">&rarr;</span>
-      </a>
-      <a href="#" class="card">
-        <div class="card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M5 20V10l7-6 7 6v10M9 20v-6h6v6"/></svg>
-        </div>
-        <h3>Byggteknisk</h3>
-        <p>Istandsetting, vedlikehold, brannsikring og universell utforming av bygget.</p>
-        <span class="card-arrow">&rarr;</span>
-      </a>
-    </div>
-  </div>
-
-  <div class="phase p3">
-    <div class="phase-header">
-      <span class="phase-num p3">Fase 3</span>
-      <span class="phase-title">Drifte og utvikle</span>
-    </div>
-    <div class="card-grid">
-      <a href="#" class="card">
-        <div class="card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-        </div>
-        <h3>Daglig drift</h3>
-        <p>Rutiner, systemer, booking, lås, fakturering og intern kommunikasjon.</p>
-        <span class="card-arrow">&rarr;</span>
-      </a>
-      <a href="#" class="card">
-        <div class="card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-        </div>
-        <h3>Frivillighet</h3>
-        <p>Rekruttering, engasjement, organisering og eierskap blant frivillige.</p>
-        <span class="card-arrow">&rarr;</span>
-      </a>
-      <a href="#" class="card">
-        <div class="card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        </div>
-        <h3>Kommunikasjon</h3>
-        <p>Målgrupper, kanaler, budskap og innhold for å nå ut lokalt.</p>
-        <span class="card-arrow">&rarr;</span>
-      </a>
-      <a href="#" class="card">
-        <div class="card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-        </div>
-        <h3>Måloppnåelse</h3>
-        <p>Formål, effektmåling, endringsteori og evaluering av virksomheten.</p>
-        <span class="card-arrow">&rarr;</span>
-      </a>
-    </div>
-  </div>
-
 </section>
 
-<div class="cta-bar">
-  <div class="cta-inner">
-    <p>Finner du ikke det du leter etter? Vi hjelper deg videre med gratis rådgivning.</p>
-    <a href="#">Book 1:1 rådgivning &rarr;</a>
+<section class="why-section">
+  <div class="why-grid">
+    <div class="why-card">
+      <h4>Demokratisk infrastruktur</h4>
+      <p>Nabolagshus er arenaer for lokal dialog, deltakelse og medbestemmelse.</p>
+    </div>
+    <div class="why-card">
+      <h4>Beredskapsressurser</h4>
+      <p>Rom som kan aktiviseres i kriser — fysiske og sosiale samlingspunkt.</p>
+    </div>
+    <div class="why-card">
+      <h4>Fellesskapsbyggere</h4>
+      <p>Hverdagsdemokratiets viktigste møteplasser der folk møtes, hjelper hverandre og bygger tillit.</p>
+    </div>
   </div>
-</div>
+</section>
 
-<footer class="footer">
-  <p>Arena for nabolagshus &middot; Øvre Slottsgate 3, 0157 Oslo &middot; <a href="mailto:hei@nabolagshus.no">hei@nabolagshus.no</a></p>
-</footer>
+<section class="bg-section">
+  <h2>Bakgrunn</h2>
+  <p class="bg-text">Arena for nabolagshus bygger videre på erfaringene fra prosjektet <a href="https://nabolaghus.socentral.no/verkt%C3%B8ykasse">Fremtidens Nabolagshus</a>, utviklet av OBOS, Fortidsminneforeningen, Riksantikvaren, OsloMet og SoCentral. Kunnskapsarenaen er etablert for å gjøre det enklere å få tilgang til gode verktøy, konkret rådgivning og et nettverk av andre som står i lignende situasjoner. Deltakerne er en blanding av kommuner, arkitekter, organisasjoner og drivere av nabolagshus fra hele landet.</p>
+  <p class="bg-text" style="margin-top:.75rem">Grendehus, kulturhus, møteplass eller nabolagshus? Kjært barn har mange navn — vi bruker nabolagshus for enkelhetens skyld, men snakker til dere alle.</p>
+</section>
 
-</body>
-</html>
+<section class="partners">
+  <h2>Prosjektpartnere</h2>
+  <div class="partner-logos">
+    <span>Sparebankstiftelsen DNB</span>
+    <span>LO</span>
+    <span>Noregs Ungdomslag</span>
+    <span>SoCentral</span>
+    <span>Fortidsminneforeningen</span>
+    <span>Kulturrom</span>
+    <span>Norge Unlimited</span>
+    <span>OBOS</span>
+    <span>USN/SESAM</span>
+  </div>
+</section>
+
+<section class="join-section">
+  <div class="join-inner">
+    <h2>Bli med — styrk huset ditt og fellesskapet</h2>
+    <p>Meld deg på for å få nyhetsbrev, invitasjoner til samlinger og tilgang til gratis 1:1 rådgivning. Åpent for alle.</p>
+    <a href="https://landing.mailerlite.com/webforms/landing/f6b1z5" class="cta-btn">Meld deg på her &rarr;</a>
+  </div>
+</section>
+
+<footer class="footer"><p>Arena for nabolagshus &middot; Øvre Slottsgate 3, 0157 Oslo &middot; <a href="mailto:hei@nabolagshus.no">hei@nabolagshus.no</a></p></footer></body></html>
